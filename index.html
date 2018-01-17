@@ -60,15 +60,11 @@
 .hr-thin{background-color: #0ab596;margin: 10px 0 20px 48%;height: 1px;}
 .hr {width: 40px;background-color: #0ab596;}
 .nav-tabs .nav-link.active {border-color:  #fff;border-bottom-color: #0ab596;}
-.navbar-nav .nav-item.active {border-color:  #fff;border-bottom-color: #0ab596;}
+.nav .nav-item.active a{border-color:  #fff;border-bottom-color: #0ab596;}
 .nav-tabs{border-color:  #fff0;}
 .owl-carousel .photo-caption{position: absolute;text-align: center;width: 60%;bottom: 1%;transform: translate(-10%, -10%);left: 0;right: 0;margin-left: auto;margin-right: auto;color: #fff;background-color: rgba(0, 0, 0, 0.4);background: rgba(0, 0, 0, 0.5);padding-bottom: 10px;font-family: "Open Sans", sans-serif;border-radius: 5px;}
 #map {min-height: 350px;}
 #map-area{ height:400px;}
-ul.navbar-nav li {
-		display: inline;
-		max-width:20px; 
-	}
 .sub-spot-attraction{max-height:338px;overflow-x:visible;overflow-y:auto;text-align: center;}
 .sub-spot-attraction li{border-bottom: 1px solid #eee;cursor:pointer;height:auto;overflow:auto;padding:7px 5px 5px;list-style: outside none none;}
 .sub-spot-attraction li { display: inline-block;border-left: 1px solid #eee;border-right: 1px solid #eee;}
@@ -709,8 +705,8 @@ blockquote p span b{color: #111111;}
 					</div>
 					<div id="header-fl" class="profile-section">
 						<div class="row">
-							<div id="navbar-spots" class="col-lg-5 col-md-5 navbar-spots-d">
-								<ul class="profile-menu nav navbar-nav " role="tablist">
+							<nav id="navbar-spots" class="col-lg-5 col-md-5 navbar-spots-d">
+								<ul class="profile-menu nav nav-tabs">
 									<li class="nav-item">
 										<a class="nav-link"  href="#About-tab" >About</a>
 									</li>
@@ -728,7 +724,7 @@ blockquote p span b{color: #111111;}
 									</li>
 
 								</ul>
-							</div>
+							</nav>
 							<div class="col-lg-5 offset-lg-2 col-md-5 offset-md-2 text-right">
 								<div id="header-fl-action" class="support float-right">
 									<form action="https://bugyal.com/sec/AddToItinerary" id="addItin" method="post">
@@ -2771,10 +2767,10 @@ Do visit at once.
 	<div class="row">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="ui-block">
-				<div id="navbar-spots" class="col-lg-5 col-md-5 navbar-spots-d">
+				<nav id="navbar-spots" class="col-lg-5 col-md-5 navbar-spots-d">
 					<ul class="profile-menu nav nav-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link nav-bottom active" data-toggle="tab" href="https://bugyal.com/places/8593/Ajmer,India#About-tab" role="tab"><span></span>About</a>
+							<a class="nav-link nav-bottom" data-toggle="tab" href="https://bugyal.com/places/8593/Ajmer,India#About-tab" role="tab"><span></span>About</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link nav-bottom" data-toggle="tab" href="https://bugyal.com/places/8593/Ajmer,India#hotel-tab" role="tab"><span></span>Hotel</a>
@@ -2790,7 +2786,7 @@ Do visit at once.
 						</li>
 			
 					</ul>
-				</div>
+				</nav>
 			</div>
 		</div>
 	</div>
@@ -2971,7 +2967,7 @@ $(document).ready(function() {
 	//	}
 	//});
 	
-	$(".navbar-nav a").on('click', function(event) {
+	$(".nav a").on('click', function(event) {
 	    if (this.hash !== "") {
 
 	      event.preventDefault();
@@ -2979,8 +2975,8 @@ $(document).ready(function() {
 	      var hash = this.hash;
 
 	      $('html, body').animate({
-	        scrollTop: $(hash).offset().top-200
-	      }, 900, function(){   
+	        scrollTop: $(hash).offset().top
+	      }, 500, function(){   
 	        window.location.hash = hash;
 	      });
 	    }
